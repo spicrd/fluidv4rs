@@ -80,10 +80,10 @@ Example:
 }
 
 .container {
-    padding-right var(--spacing-50-200);
-    padding-left var(--spacing-50-210-320-1920);
-    padding-top var(--custom-spacing-1);
-    padding-bottom var(--spacing-50-260-320-1920);
+    padding-right: var(--spacing-50-200);
+    padding-left: var(--spacing-50-210-320-1920);
+    padding-top: var(--custom-spacing-1);
+    padding-bottom: var(--spacing-50-260-320-1920);
 }
 ```
 Output:
