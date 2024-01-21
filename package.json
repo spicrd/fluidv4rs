@@ -1,0 +1,23 @@
+{
+  "name": "fluidv4rs",
+  "version": "0.0.1",
+  "description": "Create responsiveness inside your CSS variables",
+  "main": "example/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spicrd/fluidv4rs.git"
+  },
+  "keywords": [
+    "css",
+    "variables"
+  ],
+  "author": "spicrd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spicrd/fluidv4rs/issues"
+  },
+  "homepage": "https://github.com/spicrd/fluidv4rs#readme"
+}
