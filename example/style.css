@@ -1,6 +1,10 @@
 :root {
-  --color-1: #fb923c;
-  --color-2: #facc15;
+  --spacing-16-200: clamp(1rem, 1rem + 11.5 * ((100vw - 37.5rem) / 82.5), 12.5rem);
+  --spacing-60-140-600-1600: clamp(3.75rem, 3.75rem + 5 * ((100vw - 37.5rem) / 62.5), 8.75rem);
+  --small-spacing: clamp(1.875rem, 1.875rem + 1.25 * ((100vw - 48rem) / 58.25), 3.125rem);
+  --spacing-35-55-70-1400: clamp(2.1875rem, 2.1875rem + 1.25 * ((100vw - 4.375rem) / 83.125), 3.4375rem);
+  --fontsize-36-60: clamp(2.25rem, 2.25rem + 1.5 * ((100vw - 37.5rem) / 82.5), 3.75rem);
+  --fontsize-28-48-400-1800: clamp(1.75rem, 1.75rem + 1.25 * ((100vw - 25rem) / 87.5), 3rem);
 }
 
 * {
@@ -14,15 +18,24 @@ html {
   background: #0d1117;
 }
 
+.container {
+  padding: var(--spacing-60-140-600-1600) var(--spacing-16-200);
+}
+
 h1 {
-  color: var(--color-1);
+  color: #fb923c;
+  font-size: var(--fontsize-36-60);
 }
 
 h2 {
-  color: var(--color-2);
+  margin-top: var(--small-spacing);
+  font-size: var(--fontsize-28-48-400-1800);
+  color: #facc15;
 }
 
 p {
+  margin-top: 0.7rem;
+  font-size: 1.1rem;
   color: #fff;
 }
 

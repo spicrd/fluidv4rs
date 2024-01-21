@@ -1,6 +1,17 @@
+@use "../scss/core.scss" as *;
+
 :root {
-  --color-1: #fb923c;
-  --color-2: #facc15;
+  @include fluidV4rs("spacing", "16-200", "60-140-600-1600", (
+    "name": "small-spacing",
+    "min": 30,
+    "max": 50,
+    "minViewport": 768,
+    "maxViewport": 1700,
+  ), (
+    "values": "35-55-70-1400",
+  ));
+
+  @include fluidV4rs("fontsize", "36-60", "28-48-400-1800");
 }
 
 * {
@@ -15,18 +26,23 @@ html {
 }
 
 .container {
-
+  padding: var(--spacing-60-140-600-1600) var(--spacing-16-200);
 }
 
 h1 {
-  color: var(--color-1)
+  color: #fb923c;
+  font-size: var(--fontsize-36-60);
 }
 
 h2 {
-  color: var(--color-2)
+  margin-top: var(--small-spacing);
+  font-size: var(--fontsize-28-48-400-1800);
+  color: #facc15;
 }
 
 p {
+  margin-top: 0.7rem;
+  font-size: 1.1rem;
   color: #fff;
 }
 

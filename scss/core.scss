@@ -1,0 +1,71 @@
+@use "sass:list";
+@use "functions" as *;
+
+@mixin fluidV4rs($defaultName, $items...) {
+  $defaultMinViewport: 600;
+  $defaultMaxViewport: 1920;
+
+  @each $item in $items {
+    $varName: null;
+    $min: null;
+    $max: null;
+    $minViewport: $defaultMinViewport;
+    $maxViewport: $defaultMaxViewport;
+    
+    @if type-of($item) == "map" {
+      @if map-get($item, "values") == null {
+        $min: map-get($item, "min");
+        $max: map-get($item, "max");
+        @if map-get($item, "minViewport") != null {
+          $minViewport: map-get($item, "minViewport");
+        }
+        @if map-get($item, "maxViewport") != null {
+          $maxViewport: map-get($item, "maxViewport");
+        }
+      } @else {
+        $splitValues: str-split(map-get($item, "values"), "-");
+        $min: to-number(list.nth($splitValues, 1));
+        $max: to-number(list.nth($splitValues, 2));
+        @if length($splitValues) == 4 {
+          $minViewport: to-number(list.nth($splitValues, 3));
+          $maxViewport: to-number(list.nth($splitValues, 4));
+        }
+      }
+      @if map-get($item, "name") != null {
+        $varName: map-get($item, "name");
+      } @else {
+        @if $minViewport == $defaultMinViewport and $maxViewport == $defaultMaxViewport {
+          $varName: #{$defaultName}-#{$min}-#{$max};
+        } @else {
+          $varName: #{$defaultName}-#{$min}-#{$max}-#{$minViewport}-#{$maxViewport};
+        }
+      }
+    } @else {
+      $splitValues: str-split($item, "-");
+      $min: to-number(list.nth($splitValues, 1));
+      $max: to-number(list.nth($splitValues, 2));
+      @if length($splitValues) == 2 {
+        $varName: #{$defaultName}-#{$min}-#{$max};
+      }
+      @if length($splitValues) == 4 {
+        $minViewport: to-number(list.nth($splitValues, 3));
+        $maxViewport: to-number(list.nth($splitValues, 4));
+        $varName: #{$defaultName}-#{$min}-#{$max}-#{$minViewport}-#{$maxViewport};
+      }
+    }
+    
+    $minRemValue: calc($min / 16);
+    $maxRemValue: calc($max / 16);
+    $minViewportRemValue: calc($minViewport / 16);
+    $maxViewportRemValue: calc($maxViewport / 16);
+    
+    --#{$varName}: #{variableValue($minRemValue, $maxRemValue, $minViewportRemValue, $maxViewportRemValue)};
+  }
+}
+
+@function variableValue($min, $max, $minViewport, $maxViewport) {
+  $maxMinusMin: $max - $min;
+  $maxMinusMinViewport: $maxViewport - $minViewport;
+  
+  @return clamp(#{$min}rem, #{$min}rem + #{$maxMinusMin} * ((100vw - #{$minViewport}rem) / #{$maxMinusMinViewport}), #{$max}rem);
+}
