@@ -1,4 +1,4 @@
-# fluidV4rs
+# fluidv4rs
 Create responsiveness inside your CSS variables
 
 ## What is it?
@@ -33,13 +33,14 @@ There is six properties that exist for a map value.
 | minViewport | number | 320 | The minimum viewport value |
 | maxViewport | number | 1920 | The maximum viewport value |
 | values | string | "30-50-320-1920" | It is a shorthand for the min, max, minViewport and maxViewport |
-> **Warning:** `values` can not be use with one of the following properties: `min`, `max`, `minViewport` and `maxViewport`.
+> :warning: **Warning** 
+The values property can not be use with one of the following properties: min, max, minViewport and maxViewport.
 
 ## How to use it
 Import the `core.scss` and `function.scss` in your project.
 
 > :memo: **Note**
-You can change the default minimum and maximum viewport value in `core.scss`.
+You can change the default minimum and maximum viewport value in core.scss.
 
 > :memo: **Note**
 The default rem value used in the formula is 16. You can change it if your base font-size is not that value.
