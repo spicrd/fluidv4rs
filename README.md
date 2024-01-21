@@ -33,17 +33,14 @@ There is six properties that exist for a map value.
 | minViewport | number | 320 | The minimum viewport value |
 | maxViewport | number | 1920 | The maximum viewport value |
 | values | string | "30-50-320-1920" | It is a shorthand for the min, max, minViewport and maxViewport |
-> :warning: **Warning** 
-The values property can not be use with one of the following properties: min, max, minViewport and maxViewport.
+> :warning: **Warning:** The values property can not be use with one of the following properties: min, max, minViewport and maxViewport.
 
 ## How to use it
 Import the `core.scss` and `function.scss` in your project.
 
-> :memo: **Note**
-You can change the default minimum and maximum viewport value in core.scss.
+> :memo: **Note:** You can change the default minimum and maximum viewport value in core.scss.
 
-> :memo: **Note**
-The default rem value used in the formula is 16. You can change it if your base font-size is not that value.
+> :memo: **Note:** The default rem value used in the formula is 16. You can change it if your base font-size is not that value.
 
 In a SCSS file, declare the root selector, import fluidv4rs and use it with the right arguments. Here's an example that cover every use case.
 Example:
