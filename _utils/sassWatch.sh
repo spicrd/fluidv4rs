@@ -1,1 +1,1 @@
-sass --watch ../scss/bundle.scss:../dist/bundle.css
+sass --watch ../example/style.scss:../example/style.css
