@@ -1,8 +1,8 @@
 # fluidv4rs
-Create responsiveness inside your CSS variables
+Create responsiveness inside your CSS variables!
 
 ## What is it?
-Fluidv4rs is a SCSS mixin that allow the creation of CSS variables that each contains a responsive value for the it's utility, it can be a font-size, a spacing, etc... Those variables will make the responsive part of a Front-end project easier to do.
+Fluidv4rs is a SCSS mixin that allow the creation of CSS variables that each contains a responsive value, it can be useful for font-size, spacing, etc... Those variables will make the responsive part of a Front-end project easier to do.
 
 ## How it works
 The mixin takes a minimum and maximum value as well as a minimum and maximum viewport value. Those values represent pixels, but will be converted to rem in the variable. The responsiveness of those variables is due to a calculation inside a clamp, the formula is:
@@ -15,10 +15,10 @@ and this is translated into scss as follows:
 --#{varName}: clamp(#{min}rem, #{$min}rem + (#{$max} - #{$min}) * ((100vw - #{$minViewport}rem) / (#{$maxViewport} - #{$minViewport})), #{max}rem);
 ```
 
-The mixin must be initialized inside the `:root {...}` selector. It takes two params: a name for the variables and a list of every variable value needed. The list takes strings or maps and can be mixed.
+The mixin must be initialized inside a selector. It takes two params: a default name for the variables and a list of every value needed. The list takes strings or maps and can be mixed.
 
 ### String
-The string value will be two or four numbers separated by dashes. The numbers represent the minimum value, maximum value, minimum viewport value and maximum viewport value. For example, it can be `"16-200"` or `"16-200-320-1920"`.
+The string value will contains two or four numbers separated by dashes. The numbers represent the minimum value, maximum value, minimum viewport value and maximum viewport value. For example, it can be `"16-200"` or `"16-200-320-1920"`.
 ```
 "min-max-minViewport-maxViewport"
 ```
@@ -36,14 +36,13 @@ There is six properties that exist for a map value.
 > :warning: **Warning:** The values property can not be use with one of the following properties: min, max, minViewport and maxViewport.
 
 ## How to use it
-Import the `core.scss` and `function.scss` in your project.
+Import the core.scss and function.scss in your project.
 
 > :memo: **Note:** You can change the default minimum and maximum viewport value in core.scss.
 
 > :memo: **Note:** The default rem value used in the formula is 16. You can change it if your base font-size is not that value.
 
-In a SCSS file, declare the root selector, import fluidv4rs and use it with the right arguments. Here's an example that cover every use case.
-Example:
+In a SCSS file, declare the root selector, import fluidv4rs and use it with the right arguments. Here's an example that cover every use case:
 ```scss
 :root {
     @include fluidV4rs("spacing",
@@ -83,6 +82,7 @@ Example:
     padding-bottom: var(--spacing-50-260-320-1920);
 }
 ```
+
 Output:
 ```css
 :root {
