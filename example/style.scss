@@ -1,0 +1,32 @@
+:root {
+  --color-1: #fb923c;
+  --color-2: #facc15;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0d1117;
+}
+
+.container {
+
+}
+
+h1 {
+  color: var(--color-1)
+}
+
+h2 {
+  color: var(--color-2)
+}
+
+p {
+  color: #fff;
+}
+
