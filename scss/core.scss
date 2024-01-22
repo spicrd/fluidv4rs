@@ -1,7 +1,7 @@
 @use "sass:list";
 @use "functions" as *;
 
-@mixin fluidV4rs($defaultName, $items...) {
+@mixin fluidv4rs($defaultName, $items...) {
   $defaultMinViewport: 600;
   $defaultMaxViewport: 1920;
 
