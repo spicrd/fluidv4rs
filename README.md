@@ -2,10 +2,10 @@
 Create responsiveness inside your CSS variables!
 
 ## What is it?
-Fluidv4rs is a SCSS mixin that allow the creation of CSS variables that each contains a responsive value, it can be useful for font-size, spacing, etc... Those variables will make the responsive part of a Front-end project easier to do.
+Fluidv4rs is a SCSS mixin that allow the creation of CSS variables. Each contains a responsive value, it can be useful for font-size, spacing, etc... Those variables will make the responsive part of a Front-end project easier to do.
 
 ## How it works
-The mixin takes a minimum and maximum value as well as a minimum and maximum viewport value. Those values represent pixels, but will be converted to rem in the variable. The responsiveness of those variables is due to a calculation inside a clamp, the formula is:
+The mixin takes a minimum and maximum value as well as a minimum and maximum viewport value. Those values represent pixel, but will be converted to rem in the variable. The responsiveness of those variables is due to a calculation inside a clamp, the formula is:
 ```
 min + (max - min) * ((100vw - minViewport) / (maxViewport - minViewport))
 ```
@@ -18,13 +18,13 @@ and this is translated into scss as follows:
 The mixin must be initialized inside a selector. It takes two params: a default name for the variables and a list of every value needed. The list takes strings or maps and can be mixed.
 
 ### String
-The string value will contains two or four numbers separated by dashes. The numbers represent the minimum value, maximum value, minimum viewport value and maximum viewport value. For example, it can be `"16-200"` or `"16-200-320-1920"`.
+The string value contains two or four numbers separated by dashes. The numbers represent the minimum value, maximum value, minimum viewport value and maximum viewport value. For example, it can be `"16-200"` or `"16-200-320-1920"`.
 ```
 "min-max-minViewport-maxViewport"
 ```
 
 ### Map
-There is six properties that exist for a map value.
+There's six properties that exist for a map value.
 | Property | Type | Example | Description |
 | -------- | ---- | ------- | ----------- |
 | name | string | "custom-name" | A custom name that replace the default one |
@@ -32,7 +32,7 @@ There is six properties that exist for a map value.
 | max | number | 50 | The maximum value |
 | minViewport | number | 320 | The minimum viewport value |
 | maxViewport | number | 1920 | The maximum viewport value |
-| values | string | "30-50-320-1920" | It is a shorthand for the min, max, minViewport and maxViewport |
+| values | string | "30-50-320-1920" | It's a shorthand for the min, max, minViewport and maxViewport |
 > :warning: **Warning:** The values property can not be use with one of the following properties: min, max, minViewport and maxViewport.
 
 ## How to use it
