@@ -1,6 +1,6 @@
 {
   "name": "fluidv4rs",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Create responsiveness inside your CSS variables",
   "main": "example/index.html",
   "scripts": {
