@@ -45,7 +45,7 @@ Import the core.scss and function.scss in your project.
 In a SCSS file, declare the root selector, import fluidv4rs and use the right arguments. Here's an example that cover every use case:
 ```scss
 :root {
-    @include fluidV4rs("spacing",
+    @include fluidv4rs("spacing",
         "50-200",
         "50-210-320-1920",
         (
