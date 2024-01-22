@@ -42,7 +42,7 @@ Import the core.scss and function.scss in your project.
 
 > :memo: **Note:** The default rem value used in the formula is 16. You can change it if your base font-size is not that value.
 
-In a SCSS file, declare the root selector, import fluidv4rs and use it with the right arguments. Here's an example that cover every use case:
+In a SCSS file, declare the root selector, import fluidv4rs and use the right arguments. Here's an example that cover every use case:
 ```scss
 :root {
     @include fluidV4rs("spacing",
