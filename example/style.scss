@@ -1,9 +1,11 @@
 @use "../scss/core.scss" as *;
 
 :root {
-  @include fluidV4rs("spacing",
-    "50-200",
-    "50-210-320-1920",
+  @include fluidv4rs("spacing", 600, 1920,
+    "22/200",
+    "test/50/200",
+    "50/210/320/1920",
+    "small-spacing/20/50/320/1920",
     (
         "min": 50,
         "max": 220,
@@ -13,7 +15,7 @@
         "max": 230,
         "minViewport": 320,
         "maxViewport": 1920,
-    ),
+    ), 
     (
         "name": "custom-spacing-1",
         "min": 50,
@@ -21,20 +23,13 @@
         "minViewport": 320,
         "maxViewport": 1920,
     ),
-    (
-        "name": "custom-spacing-2",
-        "values": "50-250-320-1920",
-    ),
-    (
-        "values": "50-260-320-1920"
-    )
-);
+  );
 
-  @include fluidV4rs("fontsize", "36-60", "28-48-400-1800");
+  @include fluidv4rs("fontsize", 600, 1920, "36/60", "28/48/400/1800");
 }
 
 * {
-  margin: 0;
+  margin: 0; 
   padding: 0;
   box-sizing: border-box;
 }
@@ -45,7 +40,7 @@ html {
 }
 
 .container {
-  padding: var(--spacing-60-140-600-1600) var(--spacing-16-200);
+  padding: var(--spacing-50-210-320-1920) var(--spacing-22-200);
 }
 
 h1 {

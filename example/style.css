@@ -1,11 +1,11 @@
 :root {
-  --spacing-50-200: clamp(3.125rem, 3.125rem + 9.375 * ((100vw - 37.5rem) / 82.5), 12.5rem);
+  --spacing-22-200: clamp(1.375rem, 1.375rem + 11.125 * ((100vw - 37.5rem) / 82.5), 12.5rem);
+  --test: clamp(3.125rem, 3.125rem + 9.375 * ((100vw - 37.5rem) / 82.5), 12.5rem);
   --spacing-50-210-320-1920: clamp(3.125rem, 3.125rem + 10 * ((100vw - 20rem) / 100), 13.125rem);
+  --small-spacing: clamp(1.25rem, 1.25rem + 1.875 * ((100vw - 20rem) / 100), 3.125rem);
   --spacing-50-220: clamp(3.125rem, 3.125rem + 10.625 * ((100vw - 37.5rem) / 82.5), 13.75rem);
   --spacing-50-230-320-1920: clamp(3.125rem, 3.125rem + 11.25 * ((100vw - 20rem) / 100), 14.375rem);
   --custom-spacing-1: clamp(3.125rem, 3.125rem + 11.875 * ((100vw - 20rem) / 100), 15rem);
-  --custom-spacing-2: clamp(3.125rem, 3.125rem + 12.5 * ((100vw - 20rem) / 100), 15.625rem);
-  --spacing-50-260-320-1920: clamp(3.125rem, 3.125rem + 13.125 * ((100vw - 20rem) / 100), 16.25rem);
   --fontsize-36-60: clamp(2.25rem, 2.25rem + 1.5 * ((100vw - 37.5rem) / 82.5), 3.75rem);
   --fontsize-28-48-400-1800: clamp(1.75rem, 1.75rem + 1.25 * ((100vw - 25rem) / 87.5), 3rem);
 }
@@ -22,7 +22,7 @@ html {
 }
 
 .container {
-  padding: var(--spacing-60-140-600-1600) var(--spacing-16-200);
+  padding: var(--spacing-50-210-320-1920) var(--spacing-22-200);
 }
 
 h1 {
