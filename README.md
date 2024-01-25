@@ -45,13 +45,11 @@ Import the core.scss and function.scss in your project.
 In a SCSS file, declare the root selector, import fluidv4rs and use the right arguments. Here's an example that cover every use case:
 ```scss
 :root {
-        "custom-name-2/50/230/320/1920",
-        "50/220/320/1920",
-        "custom-name-1/50/210",
+    @include fluidv4rs("spacing", 600, 1920,
         "50/200",
-    @include fluidv4rs("spacing",
-        "50-200",
-        "50-210-320-1920",
+        "custom-name-1/50/210",
+        "50/220/320/1920",
+        "custom-name-2/50/230/320/1920",
         (
             "min": 50,
             "max": 240,
